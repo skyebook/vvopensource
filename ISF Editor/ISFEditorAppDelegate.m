@@ -1148,6 +1148,11 @@
 		
 		VVRELEASE(outBuffer);
 		VVRELEASE(buffer2d);
+        
+        if (isfController.newShader) {
+            isfController.newShader = NO;
+        }
+        
 		//VVRELEASE(syphonCopy);
 		//VVRELEASE(syphonBuffer);
 		

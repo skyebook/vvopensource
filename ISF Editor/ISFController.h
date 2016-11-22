@@ -24,11 +24,13 @@
 	
 	ISFGLScene		*scene;
 	BOOL			sceneIsFilter;
-	
+    
 	NSString				*targetFile;
 	
 	MutLockArray			*itemArray;
 }
+
+@property(atomic, readwrite) BOOL newShader;
 
 - (void) setSharedGLContext:(NSOpenGLContext *)n;
 

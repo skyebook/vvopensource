@@ -17,8 +17,6 @@
 #define ISFITEMSPACE 10
 
 
-
-
 @implementation ISFController
 
 
@@ -27,6 +25,7 @@
 	if (self = [super init])	{
 		scene = nil;
 		targetFile = nil;
+        _newShader = NO;
 		itemArray = [[MutLockArray alloc] init];
 		return self;
 	}
@@ -157,10 +156,12 @@
 			VVRunAlertPanel([err name],tmpString,@"Oh snap!",nil,nil);
 		});
 	}
+    _newShader = YES;
 	[scene _renderUnlock];
 	[self populateUI];
 	[appDelegate _isfFileReloaded];
 }
+
 - (void) file:(NSString *)p changed:(u_int)fflag	{
 	//NSLog(@"%s ... %@",__func__,p);
 	
